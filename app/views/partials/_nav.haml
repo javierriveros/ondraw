@@ -1,0 +1,16 @@
+/ Always shows a header, even in smaller screens.
+%header.mdl-layout__header
+  .mdl-layout__header-row
+    / Title
+    =link_to "Chatty", root_path, class: "mdl-layout-title white-text"
+    .mdl-layout-spacer
+    %nav.mdl-navigation.mdl-layout--large-screen-only
+      - if user_signed_in?
+        = link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "white-text"
+.mdl-layout__drawer
+  %span.mdl-layout-title Chatty
+  %nav.mdl-navigation
+    - if user_signed_in?
+      = link_to user_path(current_user), class: "mdl-navigation__link" do
+        %i.material-icons account_circle
+        Mi Perfil

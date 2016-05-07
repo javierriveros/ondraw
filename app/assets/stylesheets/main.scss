@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #eee;
+}
+body, input, textarea {
+    font-family: "Roboto";
+}
+a, a:hover, a:visited, a:focus, a:active {
+    text-decoration: none;
+}
+.main-background {
+    background: url(#{asset_path("principal_bg.jpg")}) center / cover;
+}
+.cover {
+    background-size: cover;
+    background-position: center;
+}
+.remotipart {
+    display: none;
+}

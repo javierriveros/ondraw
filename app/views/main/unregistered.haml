@@ -1,0 +1,7 @@
+.full-height.row.middle-xs.white-text.center-xs.main-background.no-margin
+    = grid xs: 10, sm: 8, md: 6, lg: 4 do
+        .big-padding.white.white-text.mdl-shadow--4dp
+            %h1.bold.blue-text.no-margin Chatty
+            %p.no-main.light-blue-text This is a social network for communication
+            .top-space
+                = render "devise/registrations/new"

@@ -1,0 +1,20 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = devise_error_messages!
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    = f.email_field :email, class: "mdl-textfield__input dark-grey-text"
+    = f.label :email, class: "mdl-textfield__label"
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    = f.password_field :password, class: "mdl-textfield__input dark-grey-text"
+    = f.label :password, class: "mdl-textfield__label"
+  - if devise_mapping.rememberable?
+    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.text-left
+      = f.label :remember_me,class: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" do
+        = f.check_box :remember_me, class: "mdl-checkbox__input"
+        %span.mdl-switch__label.dark-grey-text{style: "left: 0;"} Recordar datos
+  .top-space
+    = f.submit "Acceder", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+  .row.middle-xs
+    = grid xs: 12, md: 6 do
+      /hh
+    = grid xs: 12, md: 6, class: "text-left", style: "margin-left: 12%;" do
+      = render "devise/shared/links"

@@ -1,0 +1,51 @@
+.circle {
+    border-radius: 50%;
+}
+.full-height {
+    min-height: 100vh;
+}
+.full-width {
+    width: 100%;
+}
+.no-margin {
+    margin: 0;
+}
+.big-padding {
+    padding: 2em 1.5em;
+}
+.large-padding {
+    padding: 10px 15px;
+}
+.medium {
+    font-size: 1.2em;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.top-space {
+    margin-top: 1em;
+}
+.bottom-space {
+    margin-bottom: 1em;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.no-list {
+    list-style-type: none;
+    margin: 0;
+}
+.border-bottom {
+    border-bottom: 1px solid #C3C3C3;
+}
+//Personalized Styles
+.mdl-layout__drawer-button {
+    color: #fff;
+    outline: 0;
+}

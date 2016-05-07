@@ -1,0 +1,33 @@
+.top-space
+  .row.center-xs
+    = grid md: 6, sm: 8, xs: 10, lg: 4 do
+      .white.mdl-shadow--2dp.relative.top-space
+        / Cover del usuario
+        .big-padding.white-text.text-left.cover.relative#user-cover{style: "background-image: url(#{@user.cover.url(:medium)});"}
+          = render "usuarios/images_menu"
+          #user-avatar
+            = circle_img @user.avatar.url(:medium)
+        %section.border-bottom.large-padding
+          .row.middle-xs
+            = grid class: "col-xs" do
+              %h1.medium.no-margin
+                %span= best_in_place_if current_user == @user, @user, :name
+                %span= best_in_place_if current_user == @user, @user, :last_name
+            = grid xs: 4 do
+              = button_to friendships_path(friend_id: @user.id), method: :post, :"data-type" => "script", remote: true, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" do
+                %i.material-icons.small person_add
+                Agregar
+        .large-padding
+          .row
+            = grid class: "col-xs" do
+              20 Seguidores
+            = grid class: "col-xs" do
+              = pluralize(@user.posts.count, "post")
+          .row.center-xs.top-space
+            = grid md: 10, xs: 8 do
+              %span= best_in_place_if current_user == @user, @user, :bio, as: :textarea
+        .top-space
+          = form_for @user, remote: true do |f|
+            = f.file_field :avatar, class: "remotipart"
+          = form_for @user, remote: true do |f|
+            = f.file_field :cover, class: "remotipart"
