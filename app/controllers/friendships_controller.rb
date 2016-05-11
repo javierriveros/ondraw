@@ -2,9 +2,9 @@ class FriendshipsController < ApplicationController
     before_action :find_friend
     
     def create
-        @friendship = Friendship.new(user: current_user, friend: @friend)
+        friendship = Friendship.new(user: current_user, friend: @friend)
         respond_to do |format|
-            if @friendship.save
+            if friendship.save
                 format.html { redirect_to @friend }
                 format.js
             else

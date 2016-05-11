@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 window.snack = (options)->
-    $("#global-snackbar").MaterialSnackbar.showSnackBar(options)
+    document.querySelector("#global-snackbar").MaterialSnackbar.showSnackbar(options);
+    
 
 $(document).on "ready page:fecth page:load", ()->
     $(".best_in_place").best_in_place()

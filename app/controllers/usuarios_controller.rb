@@ -3,7 +3,7 @@ class UsuariosController < ApplicationController
   before_action :authenticate_user!, only: [:update]
   before_action :authenticate_owner!, only: [:update]
   def show
-    
+    @are_friends = current_user.my_friend?(@user)
   end
   
   def update

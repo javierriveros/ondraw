@@ -13,14 +13,16 @@
               %h1.medium.no-margin
                 %span= best_in_place_if current_user == @user, @user, :name
                 %span= best_in_place_if current_user == @user, @user, :last_name
-            = grid xs: 4 do
-              = button_to friendships_path(friend_id: @user.id), method: :post, :"data-type" => "script", remote: true, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" do
-                %i.material-icons.small person_add
-                Agregar
+            - unless @are_friends
+              = grid xs: 4 do
+                = button_to friendships_path(friend_id: @user.id), method: :post, :"data-type" => "script", remote: true, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" do
+                  %i.material-icons.small person_add
+                  Agregar
         .large-padding
           .row
             = grid class: "col-xs" do
-              20 Seguidores
+              20
+              Seguidores
             = grid class: "col-xs" do
               = pluralize(@user.posts.count, "post")
           .row.center-xs.top-space

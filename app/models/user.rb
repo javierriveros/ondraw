@@ -55,6 +55,10 @@ class User < ApplicationRecord
     end
   end
   
+  def my_friend?(friend)
+    Friendship.friends?(self, friend)
+  end
+  
   private
     def validate_username_regex
       unless username =~ /\A[a-zA-Z]*[a-zA-Z][a-zA-Z0-9_]*\z/
