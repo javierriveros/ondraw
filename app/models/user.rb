@@ -38,6 +38,11 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { in: 3..15 }
   validate :validate_username_regex
   has_many :posts
+  has_many :friendships
+  
+  has_many :friends_added, through: :friendships, source: :friend
+  has_many :followers, class_name: "Friendship", foreign_key: "friend_id"
+  has_many :friends_who_added, through: :friendships, source: :user
   
   has_attached_file :avatar, styles: { medium: "300x300", thumb: "100x100" }, default_url: "/images/:style/missing_user.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/

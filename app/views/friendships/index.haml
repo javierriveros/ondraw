@@ -1,0 +1,15 @@
+.row.center-xs
+    = grid xs: 10, md: 8 do
+        .white.large-padding
+            - if @pending_friendships.count > 0
+                .border-bottom
+                    %p.text-left Amistades pendientes
+                    = render @pending_friendships
+            - if @accepted_friendships.count > 0
+                .border-bottom.top-space
+                    %p.text-left Amistades aceptadas
+                    = render @accepted_friendships
+            - if @pending_requests.count > 0
+                .top-space
+                    %p.text-left Mis solicitudes pendientes
+                    = render @pending_requests

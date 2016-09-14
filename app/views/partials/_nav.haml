@@ -6,7 +6,8 @@
     .mdl-layout-spacer
     %nav.mdl-navigation.mdl-layout--large-screen-only
       - if user_signed_in?
-        = link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "white-text"
+        = link_to "Mi solicitudes", friendships_path, class: "white-text mdl-navigation__link"
+        = link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "white-text mdl-navigation__link"
 .mdl-layout__drawer
   %span.mdl-layout-title Chatty
   %nav.mdl-navigation
