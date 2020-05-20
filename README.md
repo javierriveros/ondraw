@@ -1,24 +1,7 @@
-## README
+# Ondraw - Online courses platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small project created for the purpose of learning Rails. This project was built around 4 years ago and is using an old version of Ruby on Rails, however the basic concepts used here are still applicable to new versions.
 
-Things you may want to cover:
+## About the author
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I'm Javier Riveros. I'm a web developer and systems engineer students that likes to create and improve things through technology.
